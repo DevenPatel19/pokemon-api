@@ -7,9 +7,12 @@ const Pokemon = (props) => {
 
   const getPokemon = () => {
 
-    axios.get('https://pokeapi.co/api/v2/pokemon?limit=807').then(response=>{ 
-      console.log(response)
+    axios.get('https://pokeapi.co/api/v2/pokemon?limit=807')
+    .then(response=>{ 
+      setPokemonList(res.data.results);
     })
+    .catch(err => console.log(err))
+  };
     // fetch("https://pokeapi.co/api/v2/pokemon?limit=807")
     // .then((response) => {return response.json();})
     // .then((response) => {setPokemonList(response.results);})
